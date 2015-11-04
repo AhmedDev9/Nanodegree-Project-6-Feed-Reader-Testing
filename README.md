@@ -1,9 +1,9 @@
 Udacity Front-End Web Developer Nanodegree
 ===========================================
-Welcome to Project 6 - Feed Reader Testing with Jasmine
+## Welcome to Project 6 - Feed Reader Testing with Jasmine
 
 
-Quick start "How to run this app":
+**Quick start "How to run this app":**
 
 - This app provides the following 4 Feeds: "Udacity Blog", "CSS Tricks", "HTML Rocks" and "Linear Degression"
 
@@ -16,10 +16,10 @@ Quick start "How to run this app":
 - Running the tests successfully (all dots are green) assures that the required functionality works as expected
 
 - The following functionality is being tested:
--- All Feeds are defined, have an url and name
--- The menu is hidden per default and toggles its visibility by clicking on the menu icon
--- Every Feed loads at least one feed entry
--- When selecting a different Feed the page content changes
+1. All Feeds are defined, have an url and name
+2. The menu is hidden per default and toggles its visibility by clicking on the menu icon
+3. Every Feed loads at least one feed entry
+4. When selecting a different Feed the page content changes
 
 - All Tests have been tested to run successfully, indicated by a row of 17 green dots and/or "17 specs, 0 failures"
 
