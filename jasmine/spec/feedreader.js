@@ -22,6 +22,7 @@ $(function() {
          * page?
          */
 
+        // tests if the variable 'allFeeds' is defined and not empty
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
@@ -31,6 +32,10 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+
+        // loops through all elements of the 'allFeeds' array
+        // and tests if every element (Feed) has an defined
+        // attribute 'url' which is not empty
 
         function checkUrl(feed) {
             it('Feed: ' + feed.name + ' has an url', function() {
@@ -48,6 +53,10 @@ $(function() {
          * and that the name is not empty.
          */
 
+        // loops through all elements of the 'allFeeds' array
+        // and tests if every element (Feed) has an defined
+        // attribute 'name' which is not empty
+
         function checkName(num,feed) {
             it('Feed ' + ++num + ' has a name: ' + feed.name, function() {
                 expect(feed.name).toBeDefined();
@@ -64,6 +73,10 @@ $(function() {
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
 
+        // this function is called once before all the specs are run
+        // to define 'menu' in order to call the click function on it
+        // and a spy on 'menu' to track its call and class changes which
+        // toggles the visibility of the menu
         beforeAll(function () {
             menu = $('.menu-icon-link');
             spy = spyOn(menu, 'click').and.callThrough();
@@ -75,6 +88,8 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
+        // tests if the menu is hidden per default, which is true
+        // when the 'body' element has a class 'menu-hidden'
         it('is hidden per default', function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
@@ -85,12 +100,18 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
+        // tests if the menu shows when the menu icon is clicked, which
+        // is true when the spy tracked a click on the menu icon and the
+        // the 'body' element does not have a class 'menu-hidden'
         it ('shows when the menu icon is clicked', function () {
             menu.click();
             expect(spy).toHaveBeenCalled();
             expect($('body').hasClass('menu-hidden')).toBe(false);
         });
 
+        // tests if the menu hides when the menu icon is clicked again,
+        // which is true when the spy tracked a click on the menu icon
+        // and the 'body' element has a class 'menu-hidden'
         it ('hides when the menu icon is clicked again', function () {
             menu.click();
             expect(spy).toHaveBeenCalled();
@@ -108,6 +129,9 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+        // loops through all elements of the 'allFeeds' array and tests if
+        // every element (Feed) could be loaded and has at least one feed entry
 
         beforeEach(function(done) {
             loadFeed(id, done);
@@ -134,6 +158,9 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+        // loads the first and second Feed and compares their contents
+        // to test if a new Feed selection changes the Feed content
 
         var feedEntries;
 
